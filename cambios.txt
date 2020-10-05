@@ -1,0 +1,5 @@
+Cambios con respecto a la version anterior (1.1)
+-Todas los archivos aparte de CSS, estan hechos ahora con el framework Bootstrap.
+-Mayor estetica en general para toda la aplicacion.
+-Ahora todos los archivos cuentan con diseño responsivo.
+-El archivo "lischat.php" ha sido eliminado, su codigo pasa a formar parte del archivo "panel.php".

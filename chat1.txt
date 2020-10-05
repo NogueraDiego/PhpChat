@@ -1,0 +1,30 @@
+CREATE DATABASE chat1;
+USE chat1;
+CREATE TABLE usuario(
+	id_usu int(10) auto_increment NOT NULL,
+	nombre varchar(15),
+	contraseña varchar(15),
+	PRIMARY KEY(id_usu)
+);
+CREATE TABLE sala(
+	id_sala int(10) auto_increment NOT NULL,
+	PRIMARY KEY(id_sala)
+);
+CREATE TABLE sala_usu(
+	id_sala int(10) NOT NULL,
+	id_usu int(10) NOT NULL,
+	INDEX(id_usu),
+	FOREIGN KEY(id_usu) REFERENCES usuario(id_usu),
+	INDEX(id_sala),
+	FOREIGN KEY(id_sala) REFERENCES sala(id_sala)
+);
+CREATE TABLE mensaje(
+	id_usu int(10) NOT NULL,
+	id_sala int(10) NOT NULL,
+	mensaje text,
+	stamp datetime,
+	INDEX(id_usu),
+	FOREIGN KEY(id_usu) REFERENCES usuario(id_usu),
+	INDEX(id_sala),
+	FOREIGN KEY(id_sala) REFERENCES sala(id_sala)
+);
